@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block body%}
+    <div class="data_entry_container">
+        <form method="POST" action="/userdata">
+          {{ form.hidden_tag() }}
+          {{ form.age.label }} {{ form.age() }}
+          {{ form.sex.label }} {{ form.sex() }}
+          {{ form.weight.label }} {{ form.weight() }}
+          {{ form.height.label }} {{ form.height() }}
+          {{ form.fbs.label }} {{ form.fbs() }}
+          {{ form.hdl.label }} {{ form.hdl() }}
+          {{ form.tg.label }} {{ form.tg() }}
+          {{ form.submit() }}
+          </form> 
+    </div>
+
+{% endblock %}
+
+
+
+

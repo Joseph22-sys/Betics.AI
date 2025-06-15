@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/base-style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>{{title}}</title>
+</head>
+
+<body>
+    {% if "user_id" in session %}
+        <header class="site-header">
+            <nav class="navbar">
+                <div class="brand-logo">
+                    <a href="#">WellTrack</a>
+                </div>
+                <div class="nav-bar-top-left">
+                    <ul class="nav-links">
+                        <li><a href="{{url_for('main.home')}}">Home</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+
+                    <div class="auth-buttons">
+                        <button class="btn-signup"><a href="{{ url_for('auth.signup') }}">Sign Up</a></button>
+                        <button class="btn-signin"><a href="{{ url_for('auth.login') }}">Login</a></button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    {% else %}
+        <header class="site-header">
+            <nav class="navbar">
+                <div class="brand-logo">
+                    <a href="#">WellTrack</a>
+                </div>
+                <div class="nav-bar-top-left">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+
+                    <div class="auth-buttons">
+                        <button class="btn-signup"><a href="{{ url_for('auth.signup') }}">Sign Up</a></button>
+                        <button class="btn-signin"><a href="{{ url_for('auth.login') }}">Login</a></button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    {% endif %}
+    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %} -->
+        
+    {% block body %}
+
+
+    {% endblock%}
+    <footer class="site-footer">
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div class="social-links">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+        <p>Copyright © 2025 by WellTrack | All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

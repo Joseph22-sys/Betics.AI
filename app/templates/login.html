@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/static/css/login-style.css">
+{% extends "base.html"%}
+{% block body %}
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="POST" action="{{ url_for('auth.login') }}" class="login-form">
+        {{ form.hidden_tag()}}
+        {{ form.email(class="user_mail", placeholder="Input Your Email") }}
+        {{ form.password(class="user_password", placeholder="Input Your Password") }}
+        {{ form.submit() }}
+    </form>
+    <p>Don't have an account    <a href="{{url_for('auth.signup')}}" class="login-link">SignUp</a></p>
+</div>
+{% endblock %}
+

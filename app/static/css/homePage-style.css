@@ -1,0 +1,227 @@
+.hero-section {
+   background-color: #FFFFFF;
+   padding: 20px;
+   height: 53lvh;
+   border-bottom-right-radius: 250px;
+   display:flex;
+}
+
+.hero-section-text-div{
+    padding: 30px;
+
+}
+
+.hero-section-text-div h1{
+    color:#004D40;
+    font-size: 55px;
+
+}
+.hero-section-text-div>h2{
+    font-size: 20px;
+    font-weight: lighter;
+    color:#3B3D3C;
+
+}
+
+
+.hero-btn-div{
+    display: flex;
+    margin-top: 15px;
+    gap: 20px;
+    width: 50%;
+}
+.hero-btn{
+    display: inline;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+
+
+.hero-btn a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn1{
+    background-color: #FF9800;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+}
+
+.btn1:hover{
+    background-color: #E68900;
+}
+
+.btn2{
+    background-color: #FFFFFF;
+    border: 2px solid #004D40;
+    color:#004D40;
+    outline: none;
+}
+
+.btn2:hover{
+    background-color: #004D40;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+.hero-img-div{
+    width:50%;
+    display: flex;
+}
+
+.hero-image{
+    margin-left: auto;
+}
+
+.about-section {
+    padding: 50px 20px; /* Add padding for spacing */
+    background-color: #FFFFFF; /* Light gray background for contrast */
+    text-align: center; /* Center-align text */
+}
+
+.about-container {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    align-items: center; /* Center items vertically */
+    gap: 30px; /* Add spacing between text and image */
+    max-width: 1200px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the container */
+}
+
+.about-text {
+    flex: 1; /* Allow text to take up equal space */
+    text-align: left; /* Align text to the left */
+}
+
+.about-text h2 {
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    color: #004D40; /* Teal color for the heading */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.about-text p {
+    font-size: 1.2rem; /* Standard font size for text */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Dark gray for readability */
+}
+
+.about-image {
+    flex: 1; /* Allow image to take up equal space */
+    text-align: center; /* Center the image */
+   
+}
+
+.about-image img {
+    max-width: 70%; /* Ensure the image scales properly */
+    border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+.testimony-heading {
+    text-align: center;
+    font-size: 2.5rem; /* Slightly larger font size for emphasis */
+    color: #004D40; /* Teal color for the heading */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+
+.testimony-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; 
+    padding: 30px;
+    margin: 20px 0px;
+    justify-content: center;
+    background-color: white; 
+    border-radius: 10px; /
+}
+
+.testimony {
+    background-color: #F9F9F9; /* grey background for cards */
+    border-radius: 10px; /* Rounded corners */
+    position: relative;
+    max-width: 300px; /* Limit the width of each testimony */
+    text-align: center;
+    padding: 20px; /* Add padding for spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.testimony:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.testimony img {
+    background-color: white;
+    border-radius: 50%; /* Circular image */
+    margin: 15px 0px;
+    width: 100px; /* Fixed width for consistency */
+    height: 100px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.testimony blockquote {
+    font-weight: bold;
+    color: #333; /* Dark gray for readability */
+    margin: 15px 0px; /* Add spacing around the quote */
+}
+
+.testimony p {
+    font-size: 1rem; /* Standard font size */
+    padding: 10px;
+    color: #000000; /* Dark green for text */
+}
+
+.testimony-author {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #00796B; /* Teal color for the author */
+    font-weight: bold; /* Bold for emphasis */
+    margin-top: 10px; /* Add spacing above the author name */
+}
+
+
+.join-us-section {
+    padding: 40px 20px;
+    background-color: #F9F9F9; 
+    text-align: center; 
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 40px auto; /* Add spacing around the section */
+    max-width: 800px; /* Limit the width for better readability */
+}
+
+
+
+.join-us-section h2 {
+    font-size: 2rem; /* Larger font size for emphasis */
+    color: #004D40; /* Teal color for the heading */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.join-button{
+    padding: 15px;
+    background-color: #FF9800;
+    border-radius: 10px;
+    border: 1px solid #FF9800;
+}
+.join-button a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+
