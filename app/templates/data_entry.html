@@ -1,21 +1,63 @@
+<link rel="stylesheet" href="/static/css/data_entry_style.css">
+
 {% extends "base.html"%}
 {% block body%}
-    <div class="data_entry_container">
-        <form method="POST" action="/userdata">
-          {{ form.hidden_tag() }}
-          {{ form.age.label }} {{ form.age() }}
-          {{ form.sex.label }} {{ form.sex() }}
-          {{ form.weight.label }} {{ form.weight() }}
-          {{ form.height.label }} {{ form.height() }}
-          {{ form.fbs.label }} {{ form.fbs() }}
-          {{ form.hdl.label }} {{ form.hdl() }}
-          {{ form.tg.label }} {{ form.tg() }}
-          {{ form.submit() }}
-          </form> 
+<form action="/predict" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="main_form">
+        <div class="demographic_features">
+            <label>Age:</label>
+                {{ form.age() }}
+
+            <label>Gender:</label>
+                {{ form.gender() }}
+        </div>
+
+        <div class="clinical_measurements">
+            <label>Pulse Rate:</label>
+                {{ form.pulse_rate() }}
+
+            <label>Systolic BP:</label>
+                {{ form.systolic_bp() }}
+
+            <label>Diastolic BP:</label>
+                {{ form.diastolic_bp() }}
+
+            <label>Glucose:</label>
+                {{ form.glucose() }}
+
+            <label>Height (cm):</label>
+                {{ form.height() }}
+
+            <label>Weight (kg):</label>
+                {{ form.weight() }}
+
+            <label>BMI:</label>
+                {{ form.bmi() }}
+        </div>
+
+        <div class="medical_history">
+            <label>Family Diabetes:</label>
+                {{ form.family_diabetes() }}
+
+            <label>Hypertensive:</label>
+                {{ form.hypertensive() }}
+
+            <label>Family Hypertension:</label>
+                {{ form.family_hypertension() }}
+
+            <label>Cardiovascular Disease:</label>
+                {{ form.cardiovascular_disease() }}
+
+            <label>Stroke:</label>
+                {{ form.stroke() }}
+        </div>
     </div>
-
+    
+    <div class="predict_button">
+        {{ form.submit() }}
+    </div>
+</form>
 {% endblock %}
-
-
 
 

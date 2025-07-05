@@ -1,0 +1,79 @@
+/* Main form container */
+form {
+  width: 1000px;
+  margin: 48px auto 32px auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 36px 30px 28px 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  
+}
+
+.main_form {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Section headings (optional, if you add them) */
+.demographic_features,
+.clinical_measurements,
+.medical_history {
+  width: 30%;
+  margin: 22px;
+ 
+}
+
+/* Labels and inputs */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #1a4d2e;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #b6c4b6;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8faf8;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+form input[type="number"]:focus,
+form select:focus {
+  border-color: #1a4d2e;
+  outline: none;
+}
+
+/* Predict button */
+.predict_button {
+  text-align: center;
+}
+
+.predict_button button {
+  width: 20%;
+  padding: 12px 0;
+  background: #1a4d2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.predict_button button:hover {
+  background: #256d3b;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  form
