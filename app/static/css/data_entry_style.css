@@ -34,7 +34,8 @@ form label {
 }
 
 form input[type="number"],
-form select {
+form select,
+form input[type="text"] {
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 16px;
@@ -47,7 +48,8 @@ form select {
 }
 
 form input[type="number"]:focus,
-form select:focus {
+form select:focus,
+form input[type="text"]:focus {
   border-color: #1a4d2e;
   outline: none;
 }
@@ -57,10 +59,10 @@ form select:focus {
   text-align: center;
 }
 
-.predict_button button {
+form input[type="submit"] {
   width: 20%;
   padding: 12px 0;
-  background: #1a4d2e;
+  background: #FF9800;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -70,10 +72,11 @@ form select:focus {
   transition: background 0.2s;
 }
 
-.predict_button button:hover {
-  background: #256d3b;
+form input[type="submit"]:hover{
+  background: #E68900;
 }
 
-/* Responsive design */
+/* 
+
 @media (max-width: 600px) {
-  form
+  form */

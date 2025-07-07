@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, InputRequired, Length
 
 class Userdata(FlaskForm):
     age = IntegerField("age",validators=[DataRequired(),InputRequired(),Length(min=1,max=110)])
-    gender = SelectField("gender" ,choices=[("1", "Yes"), ("0", "No")], validators=[DataRequired(), InputRequired()])
+    gender = SelectField("gender" ,choices=[("1", "Male"), ("0", "Female")], validators=[DataRequired(), InputRequired()])
     
     pulse_rate = IntegerField("pulse_rate",validators=[DataRequired(),InputRequired(),Length(min=40,max=180)])
     systolic_bp = IntegerField("systolic_bp",validators=[DataRequired(),InputRequired(),Length(min=80,max=200)])
@@ -32,5 +32,3 @@ class Userdata(FlaskForm):
     
     
     
-    
-from wtforms import 
