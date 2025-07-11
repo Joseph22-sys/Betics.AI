@@ -13,6 +13,7 @@ After a **new user signs up** in the `auth` Blueprint:
 
 ## 🔥 Root of the Problem
 
+
 Blueprint routes need to be called **using their full name**, like:
 
 ```python

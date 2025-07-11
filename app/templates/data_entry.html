@@ -2,7 +2,7 @@
 
 {% extends "base.html"%}
 {% block body%}
-<form action="/predict" method="POST">
+<form action="{{ url_for('model.predict') }}" method="POST">
     {{ form.hidden_tag() }}
     <div class="main_form">
         <div class="demographic_features">
@@ -26,7 +26,7 @@
             <label>Glucose:</label>
                 {{ form.glucose() }}
 
-            <label>Height (cm):</label>
+            <label>Height (m):</label>
                 {{ form.height() }}
 
             <label>Weight (kg):</label>

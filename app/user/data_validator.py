@@ -5,15 +5,16 @@ from wtforms.validators import DataRequired, InputRequired, Length
 
 
 class Userdata(FlaskForm):
-    age = IntegerField("age",validators=[DataRequired(),InputRequired(),Length(min=1,max=110)])
+    age = IntegerField("age",validators=[DataRequired(),InputRequired()])
     gender = SelectField("gender" ,choices=[("1", "Male"), ("0", "Female")], validators=[DataRequired(), InputRequired()])
     
-    pulse_rate = IntegerField("pulse_rate",validators=[DataRequired(),InputRequired(),Length(min=40,max=180)])
-    systolic_bp = IntegerField("systolic_bp",validators=[DataRequired(),InputRequired(),Length(min=80,max=200)])
-    diastolic_bp = IntegerField("diastolic_bp",validators=[DataRequired(),InputRequired(),Length(min=50,max=130)])
-    glucose = FloatField("glucose",validators=[DataRequired(),InputRequired(),Length(min=70,max=300)])
-    height = FloatField("height",validators=[DataRequired(),InputRequired(),Length(min=1,max=300)])
-    weight = FloatField("weight",validators=[DataRequired(),InputRequired(),Length(min=1,max=500)])
+    pulse_rate = IntegerField("pulse_rate",validators=[DataRequired(),InputRequired()])
+    
+    systolic_bp = IntegerField("systolic_bp",validators=[DataRequired(),InputRequired()])
+    diastolic_bp = IntegerField("diastolic_bp",validators=[DataRequired(),InputRequired()])
+    glucose = FloatField("glucose",validators=[DataRequired(),InputRequired()])
+    height = FloatField("height",validators=[DataRequired(),InputRequired()])
+    weight = FloatField("weight",validators=[DataRequired(),InputRequired()])
     
     family_diabetes = SelectField("Family Diabetes", choices=[("1", "Yes"), ("0", "No")])
     hypertensive = SelectField("Hypertensive", choices=[("1", "Yes"), ("0", "No")])

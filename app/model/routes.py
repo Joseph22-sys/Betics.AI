@@ -1,8 +1,8 @@
-from app.user import bp
+from app.model import bp
 from flask import render_template,session, redirect, url_for,request
 from app.user.data_validator import Userdata
-from app.model.utils import get_bmi,get_risk_score,get_bmi_category
-import pandas as pd
+from app.model.utils import get_bmi,get_risk_score,get_bmi_category,run_prediction
+
 
 
 @bp.route('/predict',methods=["POST"])
@@ -32,19 +32,13 @@ def predict():
             bmi_category = get_bmi_category(bmi)
             
            
-
-            # Column order (same as used in training)
-            columns = [age,gender,pulse_rate,systolic_bp,diastolic_bp,
-                    glucose,height,weight,bmi,family_diabetes,
-                    hypertensive,family_hypertension,cardiovascular_disease,
-                    stroke,bmi_category,risk_score]
-
+            user_data = [age,gender,pulse_rate,systolic_bp,diastolic_bp,
+                         glucose,height,weight,bmi,family_diabetes,
+                         hypertensive,family_hypertension,cardiovascular_disease,
+                         stroke,bmi_category,risk_score]
 
             
-            
-            
-            
-            
+            run_prediction(user_data)
             
             return redirect(url_for('user.dashboard'))
     
