@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Betics.AI Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+   
+  </script>
+</head>
+<body class="flex min-h-screen bg-gray-50">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="w-64 bg-blue border-r shadow-sm p-4 space-y-6 hidden md:block">
+    <div class="text-2xl font-bold text-green-600">
+      <a href="#">Betics.AI</a>
+    </div>
+    <nav class="space-y-3 text-gray-700 text-sm font-medium">
+      <a href="{{ url_for('main.home') }}" class="block hover:text-green-600">Dashboard</a>
+      <a href="#" class="block hover:text-green-600">SugarSense</a>
+      <a href="#" class="block hover:text-green-600">DoctorConnect</a>
+      <a href="#" class="block hover:text-green-600">AI Recommendations</a>
+    </nav>
+  </aside>
+
+  <!-- Mobile Toggle Button -->
+  <div class="md:hidden fixed top-4 left-4 z-50">
+    <button onclick="toggleSidebar()" class="text-2xl text-green-600">
+      ☰
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6">
+    <h1 class="text-xl font-semibold mb-4">Welcome to Betics.AI</h1>
+    <!-- Your content goes here -->
+  </main>
+
+</body>
+</html>
