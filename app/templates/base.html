@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/static/css/base-style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base-style.css') }}">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         
@@ -18,15 +18,20 @@
     <title>{{title}}</title>
 </head>
 <body>
-    {% if "user_id" in session %}
-    <header class="w-64 h-screen bg-white text-black shadow-xl p-4">
-        <nav ></nav>
-    </header>
-
-
-
-
-
+    {% if session.get('user_id') %}
+        <header class="w-64 h-screen bg-white text-black shadow-xl p-4">
+            <nav>
+                <ul>
+                    <li class="text-2xl  font-bold text-green-900 mb-10">
+                        <a href="{{ url_for('main.home') }}">Betics.AI</a>
+                    </li>
+                    <li><a href="{{ url_for('main.home') }}" class="block hover:text-orange-600 mb-8">Dashboard</a></li>
+                    <li><a href="#" class="block hover:text-orange-600 mb-8">SugarSense</a></li>
+                    <li><a href="#" class="block hover:text-orange-600 mb-8">DoctorConnect</a></li>
+                    <li><a href="#" class="block hover:text-orange-600 mb-8">AI Recommendations</a></li>
+                </ul>
+            </nav>
+        </header>
 
     {% else %}
         <header class="site-header">
@@ -49,12 +54,8 @@
                 </div>
             </nav>
         </header>
-
-        {% block body %}
-
-
-        {% endblock%}
-        <footer class="site-footer">
+     
+        <!-- <footer class="site-footer">
             <div class="footer-links">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -71,8 +72,16 @@
                 </ul>
             </div>
             <p>Copyright © 2025 by Betics AI | All Rights Reserved</p>
-        </footer>
+        </footer> -->
     {% endif %}
+
+    <main>
+        {% block body %}
+
+
+        {% endblock%}
+    </main>
+       
     <!-- {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       <ul class="flashes">
