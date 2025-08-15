@@ -1,7 +1,7 @@
 from flask import Flask
 from config import Config
 from app.extensions import db
-
+from app.db_models.auth import User
 
 
 def create_app(config_class=Config):
@@ -27,6 +27,12 @@ def create_app(config_class=Config):
     
     from app.error_handlers import bp as error_handlers_bp
     app.register_blueprint(error_handlers_bp)
+
+ 
+
+    # Create tables automatically on first run
+    with app.app_context():
+        db.create_all()
     
     
     return app

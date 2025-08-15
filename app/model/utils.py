@@ -1,10 +1,17 @@
 import time
 import joblib
 import pandas as pd
+from config import model_path,scaler_path
 
-model = joblib.load(r'C:\Users\Abasifreke\Desktop\Joseph Coding\Betics.AI\app\model\logistic_models\diabetes_model.pkl')
-scaler = joblib.load(r'C:\Users\Abasifreke\Desktop\Joseph Coding\Betics.AI\app\model\logistic_models\scaler.pkl')
 
+
+
+
+# Load the model
+model = joblib.load(model_path)
+
+# Load Scaler
+scaler = joblib.load(scaler_path)
 
 
 def get_bmi(weight, height):

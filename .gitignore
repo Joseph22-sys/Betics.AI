@@ -1,11 +1,11 @@
 .env
-.env/
+
 
 Betics.AI-Shortcut.lnk
 Betics.AI.code-workspace
 help.md
 
-
+app.db
 
 instance/
 venv/

@@ -14,6 +14,7 @@ def signup():
             phone = form.phone.data
             password = form.password.data
             
+            
             # Check if user already exists
             existing_user = User.query.filter_by(email=email).first()
             if existing_user:
