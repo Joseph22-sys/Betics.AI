@@ -2,8 +2,8 @@ import time
 import joblib
 import pandas as pd
 
-model = joblib.load('E:/Project Folder/Betics.AI/app/model/logistic_models/diabetes_model.pkl')
-scaler = joblib.load('E:/Project Folder/Betics.AI/app/model/logistic_models/scaler.pkl')
+model = joblib.load(r'C:\Users\Abasifreke\Desktop\Joseph Coding\Betics.AI\app\model\logistic_models\diabetes_model.pkl')
+scaler = joblib.load(r'C:\Users\Abasifreke\Desktop\Joseph Coding\Betics.AI\app\model\logistic_models\scaler.pkl')
 
 
 
