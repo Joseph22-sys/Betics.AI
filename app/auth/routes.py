@@ -14,7 +14,7 @@ def signup():
             phone = form.phone.data
             password = form.password.data
             
-            
+
             # Check if user already exists
             existing_user = User.query.filter_by(email=email).first()
             if existing_user:
@@ -31,7 +31,7 @@ def signup():
             session["user_id"] = new_user.id
             session["user_name"] = new_user.user_name
             
-            return redirect(url_for("user.dashboard")) 
+            return redirect(url_for("user.dataentry")) 
         
     return render_template("signup.html", title="SignUp",form=form)   
 
@@ -48,6 +48,7 @@ def login():
         password = form.password.data
         
         user = User.query.filter_by(email=email).first()
+        
         if user and user.check_password(password):
             session["user_id"] =   user.id
             session["user_name"] = user.user_name

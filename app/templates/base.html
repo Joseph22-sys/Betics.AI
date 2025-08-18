@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base-style.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,44 +16,37 @@
     <title>{{title}}</title>
 </head>
 <body>
-    {% if session.get('user_id') %}
-        <header class="w-64 h-screen bg-white text-black shadow-xl p-4">
-            <nav>
-                <ul>
-                    <li class="text-2xl  font-bold text-green-900 mb-10">
-                        <a href="{{ url_for('main.home') }}">Betics.AI</a>
-                    </li>
-                    <li><a href="{{ url_for('main.home') }}" class="block hover:text-orange-600 mb-8">Dashboard</a></li>
-                    <li><a href="#" class="block hover:text-orange-600 mb-8">SugarSense</a></li>
-                    <li><a href="#" class="block hover:text-orange-600 mb-8">DoctorConnect</a></li>
-                    <li><a href="#" class="block hover:text-orange-600 mb-8">AI Recommendations</a></li>
+
+    <header class="site-header">
+        <nav class="navbar ">
+            <div class="brand-logo">
+                <a href="#">Betics.AI</a>
+            </div>
+            <div class="nav-bar-top-left">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
-            </nav>
-        </header>
 
-    {% else %}
-        <header class="site-header">
-            <nav class="navbar ">
-                <div class="brand-logo">
-                    <a href="#">Betics.AI</a>
+                <div class="auth-buttons">
+                    <button class="btn-signup"><a href="{{ url_for('auth.signup') }}">Sign Up</a></button>
+                    <button class="btn-signin"><a href="{{ url_for('auth.login') }}">Login</a></button>
                 </div>
-                <div class="nav-bar-top-left">
-                    <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+            </div>
+        </nav>
+    </header>
+    
 
-                    <div class="auth-buttons">
-                        <button class="btn-signup"><a href="{{ url_for('auth.signup') }}">Sign Up</a></button>
-                        <button class="btn-signin"><a href="{{ url_for('auth.login') }}">Login</a></button>
-                    </div>
-                </div>
-            </nav>
-        </header>
-     
-        <!-- <footer class="site-footer">
+    <main>
+        {% block body %}
+
+
+        {% endblock%}
+    </main>
+    
+        <footer>
             <div class="footer-links">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -72,28 +63,11 @@
                 </ul>
             </div>
             <p>Copyright © 2025 by Betics AI | All Rights Reserved</p>
-        </footer> -->
-    {% endif %}
-
-    <main>
-        {% block body %}
+        </footer>
 
 
-        {% endblock%}
-    </main>
-       
-    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <ul class="flashes">
-        {% for category, message in messages %}
-          <li class="alert alert-{{ category }}">{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-    {% endwith %} -->
-        
+            
 
-    <script src="https://cdn.tailwindcss.com"></script>
     
 </body>
 
